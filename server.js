@@ -3,7 +3,8 @@ import fetch from 'node-fetch';
 import cors from 'cors';
 
 
-const atlassianAddress = "https://james-ritza.atlassian.net/rest/api";
+const atlassianAddress = "<your-atlassian-address-here>";
+const projectKey = "<your-project-key-here>";
 const transitionList = {
     "to do": "11",
     "in progress": "21",
@@ -14,7 +15,7 @@ const authHeaders = {
     "Accept": "application/json",
     "Content-Type": "application/json",
     'Authorization': `Basic ${Buffer.from(
-        'james@ritza.co:RueHnBu2pirZuiRtyIGM9CB2'
+        '<your-email-address-here>:<your-api-token-here>'
     ).toString('base64')}`,
 }
 const app = express();
@@ -27,7 +28,7 @@ app.use(express.json())
 
 app.get('/getIssues', function (req, res) {
 
-    const response = fetch(`${atlassianAddress}/2/search?jql=project=JDW`, {  
+    const response = fetch(`${atlassianAddress}/2/search?jql=project=${projectKey}`, {  
     method: 'GET',
     headers: authHeaders,
     })
