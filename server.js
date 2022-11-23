@@ -5,6 +5,8 @@ import cors from 'cors';
 
 const atlassianAddress = "<your-atlassian-address-here>";
 const projectKey = "<your-project-key-here>";
+const email = "<your-email-here>";
+const token = "<your-api-token-here>";
 const transitionList = {
     "to do": "11",
     "in progress": "21",
@@ -15,7 +17,7 @@ const authHeaders = {
     "Accept": "application/json",
     "Content-Type": "application/json",
     'Authorization': `Basic ${Buffer.from(
-        '<your-email-address-here>:<your-api-token-here>'
+        `${email}:${token}`
     ).toString('base64')}`,
 }
 const app = express();
@@ -119,5 +121,5 @@ app.post('/updateTransition', function (req, res) {
 
 
 app.listen(3000, function() {
-    console.log('Example app listening on port 3000!');
+    console.log('Listening on port 3000!');
     });
