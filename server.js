@@ -2,7 +2,7 @@ import express from 'express';
 import fetch from 'node-fetch';
 import cors from 'cors';
 
-const atlassianAddress = '<your-atlassian-address-here>';
+const atlassianAddress = '<your-atlassian-address-here>' + 'rest/api';
 const projectKey = '<your-project-key-here>';
 const email = '<your-email-here>';
 const token = '<your-api-token-here>';

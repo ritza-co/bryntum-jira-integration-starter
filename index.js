@@ -32,7 +32,7 @@ function createTaskBoard(issues) {
 
   const taskBoard = new TaskBoard({
 
-    appendTo: 'taskboard',
+    appendTo: document.body,
 
     columnField: 'status',
 
