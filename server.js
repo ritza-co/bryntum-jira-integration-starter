@@ -63,7 +63,7 @@ app.post('/addIssue', function (req, res) {
     'fields': {
       'summary': req.body.summary,
       'project': {
-        'key': 'JDW',
+        'key': projectKey,
       },
       'issuetype': {
         'id': '10001',
